@@ -223,7 +223,7 @@ export function Contact() {
         </h2>
 
         <div className="grid gap-8 border-t border-rule pt-10 md:grid-cols-3">
-          <div>
+          {profile.email && (<div>
             <p className="u-label mb-3 text-ink-3">Email</p>
             <a
               href={`mailto:${profile.email}`}
@@ -231,7 +231,7 @@ export function Contact() {
             >
               {profile.email}
             </a>
-          </div>
+          </div>)}
           <div>
             <p className="u-label mb-3 text-ink-3">GitHub</p>
             <a
@@ -243,12 +243,12 @@ export function Contact() {
               github.com/yoonju977
             </a>
           </div>
-          <div>
+          {profile.location && (<div>
             <p className="u-label mb-3 text-ink-3">Based in</p>
             <p className="text-[15px] font-semibold md:text-[17px]">
               {profile.location}, 대한민국
             </p>
-          </div>
+          </div>)}
         </div>
 
         <p className="u-num max-w-[62ch] text-[11.5px] leading-relaxed text-ink-3">
