@@ -29,9 +29,9 @@ export const profile = {
   oneLine: '현장의 반복 문제를 절차로 바꿔, AI 서비스를 멈추지 않게 운영하는 백엔드 개발자',
   tagline: '지구력',
   bio: '고객 데스크에서 6년 8개월을 보내고, 그 옆에서 학위와 프로젝트를 끝냈습니다. 지금은 모델이 아니라 모델이 멈추지 않는 구조를 만듭니다.',
-  email: 'yoonju977@gmail.com',
+  email: '',
   github: 'https://github.com/yoonju977',
-  location: '경기 의왕',
+  location: '',
 }
 
 export const marquee = [
@@ -119,7 +119,7 @@ export const projects: Project[] = [
       '베타 서비스에 맞게 프라이빗 서브넷에 SSM으로 전환했어야 하나, 단일 AZ에 퍼블릭 서브넷, SSH가 열려 있었음. 형태소 분석과 불용어를 지운 테스트에서 모델 성능 차이에 대한 증명을 해내지 못함.',
     images: [
       { src: 'img/p2_cloud_archi.jpg', caption: 'AWS 구성 — 앱(Fargate)과 GPU 추론(EC2 g4dn ASG) 분리' },
-      { src: 'img/p2_ui.jpg', caption: '데이터 모델 — 증상·질환·병원·의료장비 15개 이상 테이블' },
+      { src: 'img/p2_ui.jpg', caption: '데이터 모델 — 증상·질환·병원·의료장비 16개 테이블' },
     ],
   },
   {
@@ -129,13 +129,13 @@ export const projects: Project[] = [
     subtitle: '반려견 통합 헬스케어 플랫폼 · 졸업 캡스톤',
     period: '2025.02 – 2025.06',
     org: '한국외국어대학교 바이오메디컬공학부',
-    role: '전체 팀장 / 백엔드 · 인프라 · AI 총괄',
+    role: '전체 팀장 / 인프라 · ML 서빙 · PM',
     team: '8인',
     domain: 'Backend',
     problem:
       '8명이 각자 다른 방식으로 작업하니 병합 충돌과 재작업이 반복됐습니다. 저는 현장 근무 후 저녁과 주말에만 팀을 운영할 수 있었습니다.',
     did: [
-      '기능을 더 만들기 전에 기준부터 세움 — AI 컨테이너와 웹 컨테이너를 분리하고 모니터링·보안을 먼저 붙임',
+      '기능을 더 만들기 전에 기준부터 세움 — 메인(웹)·사료추천(AI)·챗봇(LangChain) 3개 서비스 컨테이너로 나누고 모니터링·보안을 먼저 붙임',
       'GitHub Actions Blue-Green 무중단 배포와 롤백 경로를 정하고, 배포 전후 체크리스트를 문서로 남김',
       'GPT-4 API와 LangChain으로 증상 추출 → 질병 매핑 → 응답 생성 체인을 구성함',
       'AAFCO·NRC 영양 기준을 규칙 필터에 넣고 다중 스코어링으로 사료를 추천함',
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     limit:
       '챗봇 Top-1은 60%에 머물렀습니다. MSA 설계이나 실제 베타 서비스 배포 당시 LLM 호출 시간이 오래 걸려 답변이 너무 늦어졌고, 기존 답변과 유사한 병명으로 추정될 시 이전 답변을 S3에서 가져오는 방식으로 우회함. 실시간 LLM 호출과 응답 시간을 줄이는 방식을 더 고민해 보는 계기가 됨.',
     images: [
-      { src: 'img/p3_cloud_archi.jpg', caption: '클라우드 구성 — AI/웹 컨테이너 분리와 무중단 배포' },
+      { src: 'img/p3_cloud_archi.jpg', caption: '클라우드 구성 — 3개 서비스 컨테이너 분리와 무중단 배포' },
       { src: 'img/p3_sys_archi.jpg', caption: '시스템 구성 — 8개 기능과 데이터 흐름' },
     ],
   },
@@ -162,10 +162,10 @@ export const projects: Project[] = [
     id: 'tcn',
     index: '03',
     name: 'Guitar Effects Emulation',
-    subtitle: 'TCN 기반 기타 이펙터 실시간 에뮬레이션 · 제1저자',
+    subtitle: 'TCN 기반 기타 이펙터 실시간 에뮬레이션 · 팀장',
     period: '2024.10 – 2024.12',
-    org: '한국외국어대학교 컴퓨터공학부 인공지능특강 연구논문',
-    role: '제1저자 / 모델 설계 · 전처리 · 손실함수 · 경량화',
+    org: '한국외국어대학교 컴퓨터공학부 인공지능특강 팀 프로젝트',
+    role: '팀장 / 모델 설계 · 전처리 · 손실함수 · 경량화',
     team: '3인',
     domain: 'AI',
     problem:
@@ -286,7 +286,6 @@ export const projects: Project[] = [
       '단위 테스트 전체 커버리지 81%(2,829 statements), 동시 30명 실패 0건, DB 스키마 11개를 5주 안에 배포까지. EC2·S3·RDS·Jenkins·ELB·CloudFront·Route53·ACM으로 배포와 HTTPS 환경을 직접 세워 봄.',
     limit:
       '인증 관련 뷰의 커버리지는 마감 안에 올리지 못함. 실제 베타 서비스 당시 Locust 테스트 때와 다른 유저 로그 양상이 보여, 이후 QA 테스트와 실제 유저의 행동성이 다를 수 있다는 것을 깨닫게 됨.',
-    link: { label: 'hunsuking.yoyobar.xyz', href: 'https://hunsuking.yoyobar.xyz/' },
     images: [{ src: 'img/p5_notify.jpg', caption: '알림 처리 로직' }],
   },
   {
@@ -320,7 +319,6 @@ export const projects: Project[] = [
       '7인 팀의 첫 전체 팀장으로 4주·회의 18회를 돌려 기한 안에 배포. Django 앱 6개를 나눠 관리하고, pytest TDD와 코드 컨벤션을 팀 규칙으로 세워 봄.',
     limit:
       '마감이 다가오자 팀원 코드를 직접 고쳐 “제가 빠지면 멈추는 구조”를 만들었음. 이후 캡스톤에서는 절차가 품질을 지키게 바꿨고, 지금 규칙은 고치기 전에 원인과 수정 이유를 기록하고 담당자에게 넘기는 것.',
-    link: { label: 'hancycle.site', href: 'https://hancycle.site/' },
   },
   {
     id: 'aimers',
@@ -377,7 +375,7 @@ export const stackMatrix = [
   {
     area: '딥러닝',
     items: ['PyTorch · torchaudio', 'TCN · WaveNet', 'KR-BERT · KoBERT · KLUE-RoBERTa', '형태소 분석', '프루닝 · 파인튜닝', 'GPT-4 · LangChain'],
-    proof: 'TCN 논문 1저자 · MeDeviSe 5종 비교 · BowwoW_Care 체인',
+    proof: 'TCN 팀 프로젝트 팀장 · MeDeviSe 5종 비교 · BowwoW_Care 체인',
   },
   {
     area: '프론트 · 협업',
