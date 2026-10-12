@@ -1,0 +1,30 @@
+/* Claude Design 시안 공통 스타일 */
+body{margin:0;background:#FAFAFC;word-break:keep-all;overflow-wrap:break-word}
+a{color:#00666C}a:hover{color:#111111}
+.btn{transition:background-color 150ms ease,color 150ms ease}
+.btn:hover,.btn:focus-visible{background:#111111 !important;color:#FFFFFF !important}
+.btn-ac:hover,.btn-ac:focus-visible{background:#00666C !important;color:#FFFFFF !important;border-color:#00666C !important}
+.prow{cursor:pointer}
+.prow>td{transition:background-color 150ms ease,color 150ms ease}
+.prow:hover>td,.prow.on>td{background:#00666C;color:#FFFFFF !important}
+.prow:hover>td *,.prow.on>td *{color:#FFFFFF !important}
+.prow:hover .btn,.prow.on .btn{background:transparent !important;border-color:#FFFFFF !important}
+.prow .btn:hover{background:#FFFFFF !important;color:#00666C !important}
+.prow .btn:hover *{color:#00666C !important}
+.btn-inv:hover,.btn-inv:focus-visible{background:#FFFFFF !important;color:#111111 !important}
+@keyframes ring-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.ring-spin{transform-origin:50% 50%;animation:ring-spin 20s linear infinite}
+@keyframes dpanel-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.dpanel{animation:dpanel-in 200ms ease-out}
+@keyframes term-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.term-solid{animation:none !important}
+.term-cursor{display:inline-block;width:0.6em;height:1.1em;vertical-align:text-bottom;background:#7FD1C7;animation:term-blink 1.06s step-end infinite}
+@keyframes ai-border{0%,100%{border-color:#00666C}50%{border-color:rgba(0,102,108,0.12)}}
+.ai-blink{animation:ai-border 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.ring-spin{animation:none}.dpanel{animation:none}.term-cursor{animation:none}.ai-blink{animation:none}}
+.btn:hover,.btn:active,.btn:focus-visible{background:#111111 !important;color:#FFFFFF !important}
+.btn-ac:hover,.btn-ac:active,.btn-ac:focus-visible{background:#00666C !important;color:#FFFFFF !important;border-color:#00666C !important}
+.btn-inv:hover,.btn-inv:active,.btn-inv:focus-visible{background:#FFFFFF !important;color:#111111 !important}
+.mrow{transition:background-color 150ms ease,color 150ms ease}
+.mrow.on{background:#00666C !important}
+.mrow.on,.mrow.on *{color:#FFFFFF !important}
