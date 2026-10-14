@@ -1,2 +1,13 @@
 node_modules
 dist
+
+# 로컬 전용 문서·작업물
+README.md
+배포방법.md
+artifact.html
+
+# 로컬 도구·빌드 산출물
+.claude/
+qr/
+package-lock.json
+tsconfig.tsbuildinfo
